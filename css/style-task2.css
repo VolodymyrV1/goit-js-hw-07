@@ -1,0 +1,32 @@
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+   
+
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px 24px;
+    max-width: 1128px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    
+    
+}
+
+.img {
+    display: block;
+    width: 360px;
+    height: 300px;
+}
