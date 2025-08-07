@@ -1,0 +1,21 @@
+body {
+    transition: background-color 250ms ease;
+}
+.change-color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    width: 148px;
+    height: 40px;
+    border-radius: 8px;
+    border-color: transparent;
+    padding: 8px 16px;
+    background-color: #4e75ff;
+    font: 500 16px / 1.5 "Montserrat", sans-serif;
+    letter-spacing: 0.04em;
+    color: #fff;
+}
+
+
