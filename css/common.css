@@ -12,6 +12,19 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 16px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 
 /* RESET SETING */
 *,
@@ -45,9 +58,6 @@ a {
   text-decoration: none;
 }
 
-address {
-  font-style: normal;
-}
 
 button {
   cursor: pointer;

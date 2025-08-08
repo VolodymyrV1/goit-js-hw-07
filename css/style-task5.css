@@ -1,6 +1,19 @@
 body {
     transition: background-color 250ms ease;
 }
+
+
+.widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+}
+
+
+
 .change-color {
     display: flex;
     align-items: center;
