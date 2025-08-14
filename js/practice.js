@@ -30,6 +30,7 @@ const images = [
 
 
 
+// Простий спосіб з використанням document.createElement() і elem.append()
 
 // const gallery = document.querySelector(".gallery");
 
@@ -52,12 +53,13 @@ const images = [
 
 
 
-
+// Спосіб з використанням функцій та з перевіркою на вміст url i alt
 function createImgEl(image) {
     const imgEl = document.createElement("img");
     imgEl.classList.add("gallery-img");
-    imgEl.src = image.url;
-    imgEl.alt = image.alt;
+    imgEl.src = image?.url || ""; //Перевірка url
+    imgEl.alt = image?.alt || "Gallery image"; // Перевірка alt
+    imgEl.loading = "lazy";
     return imgEl;
 };
 
@@ -66,30 +68,35 @@ function createGalleryItem(image) {
     liEl.classList.add("gallery-item");
     const img = createImgEl(image);
     liEl.append(img);
-    return liEl;
-    
+    return liEl;    
 };
 
 function buildGalleryItem(images) {
-    if (images) {
-        return images.map(createGalleryItem)
-    }
-
+  if (!Array.isArray(images)) { //Перевірка чи images це масив
+    console.warn("images має бути масивом")
+    return [];
+  };  
+  return images.map(createGalleryItem); 
 };
 
 function renderGallery(container, items) {
-    container.append(...items)
-}
+  if (!(container instanceof Element)) {
+    console.warn("Контейнер не знайдено"); //Перевірка чи контейнер є HTML елементом
+    return;
+  };
+  
+  container.append(...items);
+};
 
 function initGallery(selector, images) {
     const container = document.querySelector(selector);
     const items = buildGalleryItem(images);
     renderGallery(container, items)
-}
+};
 
 
 
-
+initGallery(".gallery", images);
 
 
 
